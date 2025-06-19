@@ -8,5 +8,12 @@ langgraph
 langchain-openai
 openai
 neo4j
-google-generativeai==0.8.3
 google==3.0.0
+google-ai-generativelanguage==0.6.10
+google-api-core==2.23.0
+google-api-python-client==2.154.0
+google-auth==2.36.0
+google-auth-httplib2==0.2.0
+google-genai==1.13.0
+google-generativeai==0.8.3
+googleapis-common-protos==1.66.0
