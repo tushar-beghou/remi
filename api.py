@@ -1,4 +1,3 @@
-import utils as ut
 import os
 import pandas as pd
 from langchain_core.prompts import ChatPromptTemplate
