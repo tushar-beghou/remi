@@ -15,8 +15,9 @@ class message(BaseModel):
 class Messages(BaseModel):
     list_messages: list[message]
     filters: str
+    history: str
 
-def application_part(data_list, time_filter):
+def application_part(data_list, time_filter, history=""):
 
     q = data_list[-1].content
 
@@ -25,6 +26,7 @@ def application_part(data_list, time_filter):
     inputs = {
         "messages": [("user",q),],
         "filters": time_filter,
+        "history": history
     }
 
     output = graph.invoke(inputs)
@@ -35,6 +37,7 @@ def application_part(data_list, time_filter):
 async def remi(inps: Messages):
     data_list: list[message] = inps.list_messages
     time_filter: str = inps.filters
+    history: str = inps.history
 
     result = application_part(data_list, time_filter)
 
