@@ -1,39 +1,16 @@
 import os
-import pandas as pd
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.pydantic_v1 import BaseModel, Field
 from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnablePassthrough
 from langchain_openai.embeddings import OpenAIEmbeddings
-from typing import Annotated, Sequence, TypedDict, Literal, List, Dict
+from typing import Annotated, Sequence, TypedDict
 from langgraph.graph.message import add_messages
 from langchain_core.messages import BaseMessage
 from langchain_core.prompts import PromptTemplate
 from langgraph.graph import END, StateGraph, START
-from IPython.display import Image
-from PIL import Image
-import numpy as np
-import io
-import time
-import matplotlib.pyplot as plt
-import concurrent.futures
-from langchain.schema import format_document
-from langchain_pinecone.vectorstores import PineconeVectorStore
-from langchain_core.vectorstores import VectorStoreRetriever
+
 from neo4j import GraphDatabase
-from langchain_community.document_transformers.openai_functions import create_metadata_tagger
-from langchain_core.documents import Document
-import json
-import ast
-from langchain_community.callbacks import get_openai_callback
-from langchain.chains import create_tagging_chain
-from IPython.display import Markdown
-import re
 from google import genai
 from google.genai.types import Tool, GenerateContentConfig, GoogleSearch
-from langdetect import detect
-import copy
 from collections import defaultdict
 
 
@@ -44,9 +21,7 @@ embeddings = OpenAIEmbeddings()
 
 API_KEY = os.getenv("GOOGLE_API_KEY")
 
-from google import genai
-from google.genai.types import Tool, GenerateContentConfig, GoogleSearch
-import os
+
 API_KEY = os.getenv("GOOGLE_API_KEY")
 client = genai.Client()
 # def serach(query):
